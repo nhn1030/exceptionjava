@@ -1,11 +1,16 @@
 package calmode;
 
 public class program {
-    public static void main(String[] args) throws exceptUnderZero, exceptOverThousand {
+    public static void main(String[] args) throws exceptUnderZero {
 
         int result = 0;
 
-        result = calculator.add(3, -4);
+        try {
+            result = calculator.add(3, 10000);
+        }
+        catch (exceptOverThousand e) {
+           System.out.println(e.getMessage());
+        }
         System.out.printf("add : %d\n", result);
 
         result = calculator.sub(3, 4);
