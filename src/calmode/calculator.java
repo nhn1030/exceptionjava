@@ -18,11 +18,17 @@ public class calculator {
         return result;
     }
 
-    public static int sub(int x, int y) {
-        return x - y;
+    public static int sub(int x, int y) throws exceptUnderZero {
+        int result = x - y;
+
+        if (result < 0)
+            throw new exceptUnderZero();
+
+        return result;
     }
 
     public static int multi(int x, int y) {
+
         return x * y;
     }
 
